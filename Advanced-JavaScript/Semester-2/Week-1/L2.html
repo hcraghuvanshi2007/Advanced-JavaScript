@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lecture 2 - getElementById, getElementsByClassName, getElementsByTagName, querySelector , querySelectorAll , </title>
+	</head>
+	<body>
+        <h1 id="heading" class="headClass">Hello Students</h1>
+        <h1 id="para" class="paralass">Good Morning</h1>
+        <h1 id="tag">Welcome to DOM</h1>
+        <h1 id="q1">This is heading tag</h1>
+    
+		<script>
+// 1
+            let head = document.getElementById("heading");
+            head.style.color = "blue"; 
+            head.style.backgroundColor = "yellow";
+            // head.style can be used to modify the style of head
+            // let head can be modiified
+            // getElementById - is an inbuilt function and used to access the element by id
+            // document - act as a bridge between html and javascript
+            console.log(head);
+
+// 2
+            let para = document.getElementsByClassName("paralass");
+            // getElementsByClassName - is an inbuilt function and used to access the element by class name
+            console.log(para);
+// 3
+            let tag = document.getElementsByTagName("h1");
+            // getElementsByTagName - is an inbuilt function and used to access the element by tag name
+            console.log(tag);
+// 4
+            let select = document.querySelector("#q1");
+            // querySelector - is an inbuilt function and used to access the element by css selector
+            console.log(select);
+
+            let select1 = document.querySelector("h1");
+            // will select first h1 tag
+            console.log(select1);
+
+            let selectAll = document.querySelectorAll("h1");
+            // will select all h1 tag
+            console.log(selectAll);
+
+            // query selector vs html collection
+            // html collection - live collection() - changes when DOM changes ,is not an array
+            // query selector - static collection()- does not change when DOM changes , node list is an array like structure
+            
+        </script>
+
+	</body>
+</html>

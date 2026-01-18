@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Lecture 3 - create elemnt , append child , prepend , insert before</title>
+	</head>
+	<body>	
+		<!-- create elemnt , append child , prepend , insert before  -->
+        <h1 id="heading">Hello Students</h1>
+        <div>This is my first JavaScript Program.</div>
+        <h2 id="subhead">Welcome to DOM Manipulation</h2>
+        <h3 id ="head">This is heading tag</h3>
+        <script>
+            let head = document.querySelector("#heading");
+            head.style.color = "blue";
+            head.style.backgroundColor = "yellow";
+            console.log(head);
+
+            let box = document.querySelector("div");
+            box.style.width = "200" + "px";
+            box.style.height = "100" + "px";
+            box.style.padding = "20" + "px";
+            box.style.backgroundColor = "green";
+            console.log(box);
+
+            let newElem = document.querySelector("#subhead");
+            newElem.style.color = "red";
+            newElem.style.fontSize = "80" + "px";
+            console.log(newElem);
+
+            let get = document.getElementById("head");
+            get.style.border = "2px solid black";
+            get.style.borderRadius = "10px";
+            get.style.backgroundColor = "blue";
+            console.log(get);
+
+
+        </script>
+            
+	</body>
+</html>
