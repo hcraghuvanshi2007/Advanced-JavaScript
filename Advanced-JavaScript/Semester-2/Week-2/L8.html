@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 8 - </title>
+	</head>
+	<body>
+        <script>
+            let box = document.createElement("div");
+            let body = document.querySelector("body");
+            box.innerText = "This is a dynamically created div.";
+
+            
+            // body.appendChild(box);
+            // body.appendChild('Hello World'); // it will not work as appendChild only accepts node objects
+
+
+            // body.append(box); // it will work as append accepts string also
+            body.append(' - Hello World');  // it will work as append accepts string also
+
+
+        </script>
+	</body>
+</html>

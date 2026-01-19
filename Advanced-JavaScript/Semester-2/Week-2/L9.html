@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 9 - Project </title>
+        <style>
+            .container{
+                width: 200px;
+                height: 200px;
+                background-color: lightblue;
+                text-align: center;
+                line-height: 200px;
+                font-size: 20px;
+                font-weight: bold;
+                color: darkblue;
+                border: 2px solid rgb(133, 133, 151);
+            }
+        </style>
+	</head>
+	<body>
+        <div> BOX</div>
+        <button id = "btn1"> ADD Styling</button>
+        <button id = "btn2"> REMOVE Styling</button>
+        <script>
+            let box = document.querySelector("div");
+            let btn1 = document.querySelector("#btn1");
+            let btn2 = document.querySelector("#btn2");
+
+            function addStyle(){
+                box.classList.add("container");
+            }
+
+            function removeStyle(){
+                box.classList.remove("container");
+            }
+            
+            // Adding click event listeners
+            btn1.addEventListener("click" , addStyle);
+            btn2.addEventListener("click" , removeStyle);
+
+            // Adding mouseover event listeners
+            // btn1.addEventListener("mouseover" , addStyle);
+            // btn2.addEventListener("mouseover" , removeStyle);
+            // console.log(box);
+
+        </script>
+	</body>
+</html>
