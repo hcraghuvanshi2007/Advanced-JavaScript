@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 5 - classList add , remove , contains , toggle </title>
+        <style>
+            .text1{
+                color : red;
+                font-size : 30px;
+                background-color : yellow;
+            }
+            .text2{
+                color : green;
+                font-size : 40px;
+            }
+            .text3{
+                color : blue;
+                font-size : 50px;
+            }
+        </style
+	</head>
+	<body>
+        <h1 id = "heading">Hello </h1>
+		<div>
+            hello students
+        </div>
+        <script>
+            /* // class list - add , remove , contains , toggle */
+           
+            /* add */
+            let box = document.querySelector("div");
+            let head = document.getElementById("heading");
+            box.classList.add("text1");
+            console.log(box.classList);
+
+            /* contains */
+            let abc = box.classList.contains("text1");
+            console.log(abc);
+            
+            /* remove  */
+            /* box.classList.remove("text1");
+            console.log(box.classList); */
+
+            /* toggle */
+            box.classList.toggle("text2");
+            console.log(box.classList);
+            head.classList.toggle("text3");
+            console.log(head.classList);
+
+        </script>
+	</body>
+</html>
