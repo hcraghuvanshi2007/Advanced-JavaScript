@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 4 - innerText and innerHTML</title>
+	</head>
+	<body>	
+		<div> Hello
+            <span style="display:none"> Students </span>
+        </div>
+        <script> 
+            let box = document.querySelector("div");
+            // inner text
+            box.innertext = "Hello Students";
+            console.log(box.innertext);
+            // inner html
+            box.innerHTML = "<h1> Welcome to DOM Manipulation </h1>";
+            console.log(box.innerHTML);
+
+            let span = document.querySelector("span");
+            span.innerText = "Good Morning";
+            console.log(span.innerText);
+
+        </script>
+	</body>
+</html>
