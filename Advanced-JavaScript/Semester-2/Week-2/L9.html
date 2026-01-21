@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Lecture 9 - Project </title>
+		<title>Lecture 9 - Event Listeners and Class Manipulation</title>
         <style>
             .container{
                 width: 200px;
@@ -22,11 +22,18 @@
         <div> BOX</div>
         <button id = "btn1"> ADD Styling</button>
         <button id = "btn2"> REMOVE Styling</button>
+        <br>
+        <h3> Type something in the input box: </h3>
+        <input type="text">
+        <form>
+            <input type="submit" value="Submit">
+        </form>
         <script>
             let box = document.querySelector("div");
             let btn1 = document.querySelector("#btn1");
             let btn2 = document.querySelector("#btn2");
-
+            let input = document.querySelector("input");
+            let form = document.querySelector("form");
             function addStyle(){
                 box.classList.add("container");
             }
@@ -34,12 +41,29 @@
             function removeStyle(){
                 box.classList.remove("container");
             }
+
+        // Adding keydown event listener to input box
+            // input.addEventListener("keydown" , function(event){
+            //     console.log("Key Pressed: " + event.key); 
+            // });
+
+
+        // Adding keyup event listener to input box
+            input.addEventListener("keyup" , function(event){
+                console.log("Key Pressed: " + event.key); 
+            });
+        
+        // Adding form submit event
+         form.addEventListener("submit" , function(event){
+                event.preventDefault(); // to prevent form submission
+                console.log("Form Submitted");
+            });
             
-            // Adding click event listeners
+         // Adding click event listeners
             btn1.addEventListener("click" , addStyle);
             btn2.addEventListener("click" , removeStyle);
 
-            // Adding mouseover event listeners
+        // Adding mouseover event listeners
             // btn1.addEventListener("mouseover" , addStyle);
             // btn2.addEventListener("mouseover" , removeStyle);
             // console.log(box);

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 10 - onclick Event and Dynamic List Creation</title>
+        <style>
+        </style>
+	</head>
+	<body>
+            <ol>
+                
+            </ol>
+            <!-- or can use ul -->
+            <button id="addItemBtn">Add List Item</button>
+        <script>
+            let list = document.querySelector("ol");
+            let btn = document.querySelector("button");
+            let count = 1;
+
+            function addItem(){
+                let listItem = document.createElement("li");
+                // let count = list.children.length + 1; without let count outside function
+                listItem.innerText = "List Item " + count;
+                list.append(listItem);
+                count = count +1;                // or we can use  c++
+            }
+            btn.addEventListener("click" , addItem);
+        </script>
+	</body>
+</html>

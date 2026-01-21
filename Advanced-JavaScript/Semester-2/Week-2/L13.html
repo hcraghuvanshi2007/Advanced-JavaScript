@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 13 - input Keydown Events</title>
+        <style>
+        </style>
+	</head>
+	<body>
+            <h3> Type something in the input box: </h3>
+        <input type="text" placeholder="Type something here">
+        <script>
+            // Adding keydown event listener to input box
+            let inputBox = document.querySelector("input");
+
+            function eventHandler(event){
+                console.log("Key Pressed: " + event.key);
+                console.log("Key Code: " + event.code);
+                console.log("------");
+                console.log(event)
+            }
+            inputBox.addEventListener("keydown" , eventHandler);
+        </script>
+	</body>
+</html>
