@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 14 - Calculator App</title>
+        <style>
+            body{
+                background-color: rgb(172, 194, 213);
+                margin: 50px;
+                margin-top: 100px;
+                max-width: 800px;
+                align-content: center;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+            .header{
+                text-align: center;
+                background-color: rgb(229, 235, 244);
+                border-radius: 20px;
+                box-shadow: 0px 4px 6px grey;
+                padding-bottom: 90px;
+                padding-top: 10px;
+                margin-left: 78px;
+                margin-right: 78px;
+                animation: slideDown 0.5s ease-in-out;
+                transition: all 0.3s ease;
+            }
+            h2{
+                font-family: calibri;
+                color: rgb(116, 141, 205);
+                font-size: 65px;
+                font-weight: bold;
+                font-stretch: expanded;
+                cursor: default;
+
+            }
+            .container{
+                width: 500px;
+                border-radius: 10px;
+                margin: auto;
+                margin-top: 50px;
+                border: 2px solid black;
+                border-radius: 10px;
+                padding: 20px;
+                text-align: center;
+                background-color: rgb(205, 239, 254);
+                grid-gap: 5px;
+                box-shadow: 5px 5px 10px grey;
+            }
+            .input{
+                margin-top: 10px;
+                margin-bottom: 20px;
+                width: 90%;
+                background-color: white;
+                height: 30px;
+                font-size: 20px;
+                margin-bottom: 10px;
+                text-align: right;
+                border-radius: 5px;
+                box-shadow: inset 2px 2px 5px grey;
+
+            }
+            button{
+                width: 22%;
+                height: 40px;
+                margin-bottom: 10px;
+                font-size: 18px;
+                padding: 0px;
+                background-color: rgb(212, 241, 247);
+                margin: 2px;
+                color: rgb(72, 83, 111);
+                box-shadow: 2px 2px 5px grey;
+                border-radius: 5px;
+                font: calibri;
+                cursor: pointer;
+                transform: scale(0.9);
+                font-weight: bold;
+                transition: all 0.2s ease;
+            }
+            button:hover{
+                background-color: rgb(179, 216, 226);
+                transform: scale(1);
+            }
+            h2:hover{
+                color: rgb(90, 112, 166);
+            }
+
+            .header:hover{
+                box-shadow: 0px 6px 8px grey;
+                transform: scale(1.01);
+            }
+            .special{
+                color: rgb(114, 100, 237);
+                font-weight: bold;
+            }
+
+            .spec1{
+                background-color: rgb(134, 123, 227);
+                color: white;
+                font-weight: bold;
+            }
+        </style>
+
+	</head>
+	<body>
+        <div class="header">
+        <h2 style="text-align: center;"> Simple Calculator </h2>
+        <div class="container">
+            <input type="text" class="input" placeholder ="0 " id="result" disabled>
+            <br>
+            <br>
+            <button class = "special">AC</button>
+            <button class = "special">^</button>
+            <button class = "special">%</button>
+            <button class = "special">C</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class = "special">/</button>
+            <br>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class = "special">*</button>
+            <br>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class = "special">-</button>
+            <br>
+            <button class = "special">.</button>
+            <button>0</button>
+            <button class = "spec1">=</button>
+            <button class = "special">+</button>
+        </div>
+        </div>
+        <script>
+            let buttons = document.querySelectorAll("button");
+            let inputBox = document.querySelector(".input");
+
+            function calculate(event){
+                // console.log(event.target.innerText);
+                if(event.target.innerText === "AC" ){
+                    inputBox.value = "";
+                    return;
+                }
+                if(event.target.innerText === "C" ){
+                    inputBox.value = inputBox.value.slice(0, -1);
+                    return;
+                }
+                if (event.target.innerText === "=" ){
+                    eval(inputBox.value);
+                    inputBox.value = eval(inputBox.value);
+                    return;
+                }
+                if (event.target.innerText === "^" ){
+                    inputBox.value += "**";
+                    return;
+                }             
+                inputBox.value += event.target.innerText;
+            }
+
+            buttons.forEach(function(button){   
+                button.addEventListener("click" , calculate);
+            });
+        </script>
+	</body>
+</html>
