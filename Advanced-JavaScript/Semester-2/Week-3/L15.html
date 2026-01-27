@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 15 - Event Propagation</title>
+        <style>
+            #outer{
+                width: 300px;
+                height: 300px;
+                background-color: lightcoral;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #middle{
+                width: 200px;
+                height: 200px;
+                background-color: lightblue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #inner{
+                width: 100px;
+                height: 100px;
+                background-color: lightgreen;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="outer">
+            <div id="middle">
+                <div id="inner">
+                    Click Me
+                </div>
+            </div>
+
+        </div>
+        <script>
+            let outer = document.querySelector("#outer");
+            let middle = document.querySelector("#middle");
+            let inner = document.querySelector("#inner");
+
+            outer.addEventListener("click", function(){
+                alert("Outer Div Clicked");
+            }, false); // Capturing Phase
+
+            middle.addEventListener("click", function(){
+                alert("Middle Div Clicked");
+            }, true); // Bubbling Phase
+
+            inner.addEventListener("click", function(){
+                alert("Inner Div Clicked");
+            }, false); // Capturing Phase
+
+            // Capturing Phase: Event goes from Window -> Document -> HTML -> Body -> Outer Div -> Middle Div -> Inner Div
+            // Bubbling Phase: Event goes from Inner Div -> Middle Div -> Outer Div -> Body
+            // Exact target : neither capturing nor bubbling phase 
+
+            // Role of true and false in addEventListener:
+            // true  -> Capturing Phase
+            // false -> Bubbling Phase
+
+            // false - false - false : All in Bubbling Phase ( inner , middle , outer )
+            // true  - true  - true  : All in Capturing Phase ( outer , middle ,  inner )
+            // true  - false - true  : Mixed Phase ( outer , inner, middle )
+            // false - true  - false : Mixed Phase  ( middle , outer , inner )
+            // false - false - true  : Mixed Phase  ( inner , outer , middle )
+            // true  - true  - false : Mixed Phase  ( middle , inner , outer )
+
+        //    for (outer , inner , middle) there is exception for exact target
+        
+        </script>
+	</body>
+</html>

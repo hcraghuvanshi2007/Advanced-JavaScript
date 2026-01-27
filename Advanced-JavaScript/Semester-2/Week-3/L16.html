@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 16 - Global Execution Context</title>
+        <style>
+            </style>
+    </head>
+    <body>
+        
+        <script>
+
+            var a = 10;
+
+            function addition(num){
+                var ans = num + num;
+                return ans;
+
+            }
+            let res1 = addition(a);
+            console.log("Result 1: " + res1);
+            let res2 = addition(25);
+            console.log("Result 2: " + res2);
+
+    // Global Execution Context
+
+        //  Memory Creation Phase:
+            //  a : undefined
+            //  addition : function addition(num){...}
+            // res1 : undefined
+            // res2 : undefined
+
+        //  Memory Execution Phase:
+            // a = 10
+            // FEC Function 
+                // num = 10       because addition(a) called with a=10
+                // ans = 20
+                // res1 = 20
+                // res2 = 50
+        </script>
+        
+	</body>
+</html>

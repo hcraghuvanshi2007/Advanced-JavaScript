@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 7 - Creating and Prepending Elements</title>
+	</head>
+	<body>
+        <p> hello </p>
+        <script> 
+        // create element and append child
+           let para = document.createElement("p");
+           para.innerText = "This is a new paragraph";
+           document.body.appendChild(para);
+           console.log(para);
+
+        // prepend element
+            const body = document.body;
+            const heading = document.createElement("h1");
+            heading.innerText = "This is a new heading";
+            body.appendChild(heading);  // Short and clean
+            console.log(heading);
+
+
+        </script>
+	</body>
+</html>

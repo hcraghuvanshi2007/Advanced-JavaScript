@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 6 - addEventListener</title>
+	</head>
+	<body>	
+		<button>Click Me</button>
+
+        <script> 
+   // add event listener
+
+        // click event
+           let btn = document.querySelector("button");
+           function show(){
+                console.log("Button Clicked");
+           }
+           btn.addEventListener("click" , show);
+           
+        // mouseover event 
+           let btn2 = document.querySelector("button");
+           btn2.addEventListener("mouseover" , function(){
+                console.log("Mouse Over Button");
+           });
+
+        
+        </script>
+	</body>
+</html>
