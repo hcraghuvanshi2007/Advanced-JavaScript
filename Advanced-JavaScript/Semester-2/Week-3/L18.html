@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 18 - TDZ (Temporal Dead Zone)
+
+        </title>
+        <style>
+            </style>
+    </head>
+    <body> 
+        
+        <script>
+        console.log(a); // will print 'undefined' due to var has a value of undefined in memory creation phase
+        // console.log(b); // will throw ReferenceError: Cannot access 'b' before initialization , because let and const are in TDZ
+        // console.log(c); // will throw ReferenceError: Cannot access 'c' before initialization , because let and const are in TDZ
+            var a=10;
+            let b=20;
+            const c=30;
+            
+  
+        </script>
+        
+	</body>
+</html>

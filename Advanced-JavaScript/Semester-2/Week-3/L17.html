@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 17 - Call Stack and Execution Context</title>
+        <style>
+            </style>
+    </head>
+    <body> 
+        
+        <script>
+            function a(){
+                console.log("Inside Function A");
+                b();
+                console.log("Function A Executed");
+
+            }
+
+            function b(){
+                console.log("Inside Function B");
+                c();
+                console.log("Function B Executed");
+
+            }
+
+            function c(){
+                console.log("Inside Function C");
+                let a = 20;
+                const b =10;
+                var result = a - b;
+                console.log(result);
+
+            }
+            a();
+            console.log("Global Execution Context");
+        
+        // in memory creation phase of GEC
+            // var = undefined
+            // let = empty
+            // const = empty
+  
+        </script>
+        
+	</body>
+</html>
