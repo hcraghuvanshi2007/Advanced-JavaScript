@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lecture 3 - Callbacks and Promises
+        </title>
+        <style>
+            </style>
+    </head> 
+    <body> 
+        
+        <script>
+            // Callback Example
+            console.log("Start Preparing Food");
+
+            function boilWater(callback) {
+                console.log("Boiling Water");
+                setTimeout(() => {
+                    console.log("Water Boiled");
+                    callback();
+                }, 3000);
+            }
+
+            function prepareTea(callback) {
+                console.log("Preparing Tea");
+                setTimeout(() => {
+                    console.log("Tea is Ready");
+                    callback();
+                }, 2000);
+            }
+
+            function serveTea() {
+                console.log("Serving Tea");
+            }
+
+            // Using Callbacks to handle asynchronous operations
+
+            // boilWater(() => {
+            //     prepareTea(() => {
+            //         serveTea();
+            //     });
+            // });
+            
+        </script>
+        
+	</body>
+</html>
